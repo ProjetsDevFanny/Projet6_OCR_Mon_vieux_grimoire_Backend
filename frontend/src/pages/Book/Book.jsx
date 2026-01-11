@@ -61,7 +61,7 @@ function Book() {
         setBook((oldValue) => ({ ...oldValue, delete: true }));
       }
     } catch (error) {
-      //console.error('Erreur lors de la suppression :', error);
+      // console.error('Erreur lors de la suppression :', error);
     }
   };
 
