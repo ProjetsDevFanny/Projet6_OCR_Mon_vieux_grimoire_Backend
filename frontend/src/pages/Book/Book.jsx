@@ -50,16 +50,18 @@ function Book() {
   }, [book, userLoading]);
 
   const onDelete = async (e) => {
+    // Si la suppression est déclenchée par une touche autre que Enter, on sort
     if (e.key && e.key !== 'Enter') {
       return;
     }
-    // eslint-disable-next-line no-restricted-globals
-    const check = confirm('Etes vous sûr de vouloir supprimer ce livre ?');
-    if (check) {
+    // Suppression directe (pas de confirm() pour Netlify/ESLint)
+    try {
       const del = await deleteBook(book.id);
       if (del) {
         setBook((oldValue) => ({ ...oldValue, delete: true }));
       }
+    } catch (error) {
+      console.error("Erreur lors de la suppression :", error);
     }
   };
 
