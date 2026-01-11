@@ -35,16 +35,16 @@ function SignIn({ setUser }) {
       });
       if (!response?.data?.token) {
         setNotification({ error: true, message: 'Une erreur est survenue' });
-        // console.log('Something went wrong during signing in: ', response);
+        // //console.log('Something went wrong during signing in: ', response);
       } else {
         storeInLocalStorage(response.data.token, response.data.userId);
         setUser(response.data);
         navigate('/');
       }
     } catch (err) {
-      // console.log(err);
+      // //console.log(err);
       setNotification({ error: true, message: err.message });
-      // console.log('Some error occured during signing in: ', err);
+      // //console.log('Some error occured during signing in: ', err);
     } finally {
       setIsLoading(false);
     }
@@ -62,7 +62,7 @@ function SignIn({ setUser }) {
         },
       });
       if (!response?.data) {
-        // console.log('Something went wrong during signing up: ', response);
+        // //console.log('Something went wrong during signing up: ', response);
         return;
       }
       setNotification({
@@ -71,7 +71,7 @@ function SignIn({ setUser }) {
       });
     } catch (err) {
       setNotification({ error: true, message: err.message });
-      // console.log('Some error occured during signing up: ', err);
+      // //console.log('Some error occured during signing up: ', err);
     } finally {
       setIsLoading(false);
     }
