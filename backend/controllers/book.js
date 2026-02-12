@@ -10,7 +10,7 @@ const fs = require('fs');
  * @param {import('express').NextFunction} next
  */
 exports.createBook = (req, res, next) => {
-  const baseUrl = process.env.BACKEND_URL || `${req.protocol}://${req.get('host')}`;
+  const baseUrl = process.env.REACT_APP_API_URL;
   const bookObject = JSON.parse(req.body.book);
   delete bookObject._id;
   delete bookObject._userId;
@@ -77,7 +77,7 @@ exports.getOneBook = (req, res, next) => {
 
 // Fonction de modification d'un livre
 exports.modifyBook = (req, res, next) => {
-  const baseUrl = process.env.BACKEND_URL || `${req.protocol}://${req.get('host')}`;
+  const baseUrl = process.env.REACT_APP_API_URL;
   // console.log pour vérifier les données reçues
   const bookObject = req.file
     ? {

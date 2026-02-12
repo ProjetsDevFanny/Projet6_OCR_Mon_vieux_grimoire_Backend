@@ -1,8 +1,4 @@
-// En dev :
-// const API_URL = process.env.REACT_APP_API_URL;
-
-// En prod :
-const API_URL = process.env.BACKEND_URL;
+const API_URL = process.env.REACT_APP_API_URL;
 
 export const API_ROUTES = {
   SIGN_UP: `${API_URL}/api/auth/signup`,
