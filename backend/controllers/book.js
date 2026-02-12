@@ -10,6 +10,7 @@ const fs = require('fs');
  * @param {import('express').NextFunction} next
  */
 exports.createBook = (req, res, next) => {
+  const baseUrl = process.env.BACKEND_URL || `${req.protocol}://${req.get('host')}`;
   const bookObject = JSON.parse(req.body.book);
   delete bookObject._id;
   delete bookObject._userId;
@@ -42,7 +43,7 @@ exports.createBook = (req, res, next) => {
     userId: req.auth.userId,
     ratings,
     averageRating,
-    imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+    imageUrl: `${baseUrl}/images/${req.file.filename}`
   });
   return book.save()
     .then((book) => res.status(201).json({
@@ -76,11 +77,12 @@ exports.getOneBook = (req, res, next) => {
 
 // Fonction de modification d'un livre
 exports.modifyBook = (req, res, next) => {
+  const baseUrl = process.env.BACKEND_URL || `${req.protocol}://${req.get('host')}`;
   // console.log pour vérifier les données reçues
   const bookObject = req.file
     ? {
         ...JSON.parse(req.body.book),
-        imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+        imageUrl: `${baseUrl}/images/${req.file.filename}`
       }
       : req.body.book ? JSON.parse(req.body.book) : { ...req.body };
 
