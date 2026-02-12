@@ -6,6 +6,12 @@
 
 Ce projet présente le **backend complet** d'une API REST pour une application de gestion de livres avec système de notation. Le développement a été entièrement réalisé sur la partie backend, mettant en œuvre une architecture moderne et sécurisée.
 
+## 🌐 Démo en ligne et déploiement
+
+- **Site en ligne (front)** : https://mon-vieux-grimoire-ocr-fs.netlify.app/
+- **Déploiement** : Frontend sur **Netlify**, backend sur **Render**
+- **Statut** : Le front fonctionne ; le back est en cours de finalisation et ne répond pas encore
+
 *Projet réalisé dans le cadre de la formation OpenClassrooms.*
 
 ## 🎯 Compétences Développées
