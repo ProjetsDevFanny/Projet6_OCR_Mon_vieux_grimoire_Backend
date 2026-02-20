@@ -8,7 +8,7 @@ Ce projet présente le **backend complet** d'une API REST pour une application d
 
 ## 🌐 Démo en ligne et déploiement
 
-- **Site en ligne (front)** : https://mon-vieux-grimoire-ocr-fs.netlify.app/
+- **Site en ligne** : https://mon-vieux-grimoire-ocr-fs.netlify.app/
 - **Déploiement** : Frontend sur **Netlify**, backend sur **Render**
 
 *Projet réalisé dans le cadre de la formation OpenClassrooms.*
